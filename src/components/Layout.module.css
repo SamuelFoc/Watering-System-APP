@@ -1,0 +1,34 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--primary-c);
+  color: var(--secondary-c);
+  font-family: var(--font-fam);
+  font-weight: 100;
+}
+
+.logout {
+  transition: 0.2s;
+}
+.logout:hover {
+  color: rgb(67, 67, 67);
+  cursor: pointer;
+}
+
+.bar {
+  height: 100px;
+  width: 100vw;
+  background-color: var(--accent-c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-c);
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 100px);
+}

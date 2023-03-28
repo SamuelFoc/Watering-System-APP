@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-c: #ffffff;
+  --accent-c: #88b04b;
+  --accent-c-hover: #5b7633;
+  --secondary-c: #3d3c3c;
+  --secondary-c-drk: #2c2c2c;
+  --tertiary-c: #85ae78;
+  --btn-c: #eee5cf;
+  --font-fam: "Montserrat", sans-serif;
+}
