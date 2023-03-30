@@ -66,7 +66,11 @@
 
 @media only screen and (max-width: 768px) {
   .backArrow {
-    left: 10px;
+    left: 25px;
+    top: -40px;
+  }
+  .delete {
+    right: 25px;
     top: -40px;
   }
 }

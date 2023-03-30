@@ -99,6 +99,7 @@ const Form = (props) => {
           onChange={handleChange}
           id="preset"
         />
+        <h6 className="fw-bold mt-3">Choose pins</h6>
         <div className={styles.radios}>
           <img
             className={styles.piImage}
