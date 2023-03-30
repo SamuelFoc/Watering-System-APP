@@ -1,0 +1,160 @@
+.piImage {
+  width: 400px;
+  transform: translateX(15px);
+}
+.radios {
+  position: relative;
+}
+.check0 {
+  position: absolute;
+  top: 125px;
+  left: 62px;
+}
+.check1 {
+  position: absolute;
+  top: 125px;
+  left: 105px;
+}
+.check2 {
+  position: absolute;
+  top: 125px;
+  left: 147px;
+}
+.check3 {
+  position: absolute;
+  top: 125px;
+  left: 189px;
+}
+.check4 {
+  position: absolute;
+  top: 125px;
+  left: 231px;
+}
+.check5 {
+  position: absolute;
+  top: 125px;
+  left: 273px;
+}
+.check6 {
+  position: absolute;
+  top: 125px;
+  left: 315px;
+}
+
+.check7 {
+  position: absolute;
+  top: 171px;
+  left: 62px;
+}
+.check8 {
+  position: absolute;
+  top: 171px;
+  left: 105px;
+}
+.check9 {
+  position: absolute;
+  top: 171px;
+  left: 147px;
+}
+.check10 {
+  position: absolute;
+  top: 171px;
+  left: 189px;
+}
+.check11 {
+  position: absolute;
+  top: 171px;
+  left: 231px;
+}
+.check12 {
+  position: absolute;
+  top: 171px;
+  left: 273px;
+}
+.check13 {
+  position: absolute;
+  top: 171px;
+  left: 315px;
+}
+
+@media only screen and (max-width: 768px) {
+  .piImage {
+    width: 250px;
+    transform: translateX(15px);
+  }
+
+  .radios {
+    position: relative;
+  }
+
+  .check0 {
+    position: absolute;
+    top: 77px;
+    left: 42px;
+  }
+  .check1 {
+    position: absolute;
+    top: 77px;
+    left: 69px;
+  }
+  .check2 {
+    position: absolute;
+    top: 77px;
+    left: 95px;
+  }
+  .check3 {
+    position: absolute;
+    top: 77px;
+    left: 121px;
+  }
+  .check4 {
+    position: absolute;
+    top: 77px;
+    left: 147px;
+  }
+  .check5 {
+    position: absolute;
+    top: 77px;
+    left: 173px;
+  }
+  .check6 {
+    position: absolute;
+    top: 77px;
+    left: 200px;
+  }
+  .check7 {
+    position: absolute;
+    top: 105px;
+    left: 42px;
+  }
+  .check8 {
+    position: absolute;
+    top: 105px;
+    left: 69px;
+  }
+  .check9 {
+    position: absolute;
+    top: 105px;
+    left: 95px;
+  }
+  .check10 {
+    position: absolute;
+    top: 105px;
+    left: 121px;
+  }
+  .check11 {
+    position: absolute;
+    top: 105px;
+    left: 147px;
+  }
+  .check12 {
+    position: absolute;
+    top: 105px;
+    left: 173px;
+  }
+  .check13 {
+    position: absolute;
+    top: 105px;
+    left: 199px;
+  }
+}

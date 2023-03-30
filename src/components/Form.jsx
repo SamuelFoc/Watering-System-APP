@@ -1,6 +1,7 @@
 import axios from "../api/axios";
 import React, { useEffect, useState } from "react";
 import styles from "./Form.module.css";
+import "../pages/Pins.css";
 import Cookies from "js-cookie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -8,9 +9,11 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 const Form = (props) => {
   const [formObject, setFormObject] = useState({});
   const [pins, setPins] = useState([]);
+  const [usedPins, setUsedPins] = useState([]);
   const [err, setErr] = useState("");
   const [msg, setMsg] = useState("Welcome");
   const token = Cookies.get("authToken");
+  const allPins = [5, 6, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 27];
 
   const handleSubmit = () => {
     axios
@@ -35,7 +38,23 @@ const Form = (props) => {
       });
   };
 
-  useEffect(() => {}, [msg]);
+  useEffect(() => {
+    axios
+      .get("/Flowers/usedpins/all", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        const allpins = response.data.moisture_pins.concat(
+          response.data.watering_pins
+        );
+        setUsedPins(allpins);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [msg]);
 
   const handleChange = (e) => {
     setFormObject((prevObj) => {
@@ -100,97 +119,33 @@ const Form = (props) => {
           id="preset"
         />
         <h6 className="fw-bold mt-3">Choose pins</h6>
-        <div className={styles.radios}>
+        <div className="radios">
           <img
-            className={styles.piImage}
+            className="piImage"
             src="/PiPins.png"
             alt="Pi Pin Layout"
             id="piImage"
           />
-          <input
-            type="checkbox"
-            name="23"
-            onChange={handleArrayChange}
-            className={styles.twentyThree}
-          />
-          <input
-            type="checkbox"
-            name="24"
-            onChange={handleArrayChange}
-            className={styles.twentyFour}
-          />
-          <input
-            type="checkbox"
-            name="25"
-            onChange={handleArrayChange}
-            className={styles.twentyFive}
-          />
-          <input
-            type="checkbox"
-            name="12"
-            onChange={handleArrayChange}
-            className={styles.twelve}
-          />
-          <input
-            type="checkbox"
-            name="16"
-            onChange={handleArrayChange}
-            className={styles.sixTeen}
-          />
-          <input
-            type="checkbox"
-            name="20"
-            onChange={handleArrayChange}
-            className={styles.twenty}
-          />
-          <input
-            type="checkbox"
-            name="21"
-            onChange={handleArrayChange}
-            className={styles.twentyOne}
-          />
-          <input
-            type="checkbox"
-            name="17"
-            onChange={handleArrayChange}
-            className={styles.sevenTeen}
-          />
-          <input
-            type="checkbox"
-            name="27"
-            onChange={handleArrayChange}
-            className={styles.twentySeven}
-          />
-          <input
-            type="checkbox"
-            name="22"
-            onChange={handleArrayChange}
-            className={styles.twentyTwo}
-          />
-          <input
-            type="checkbox"
-            name="5"
-            onChange={handleArrayChange}
-            className={styles.five}
-          />
-          <input
-            type="checkbox"
-            name="6"
-            onChange={handleArrayChange}
-            className={styles.six}
-          />
-          <input
-            type="checkbox"
-            name="13"
-            onChange={handleArrayChange}
-            className={styles.thirTeen}
-          />
-          <input
-            type="checkbox"
-            name="19"
-            onChange={handleArrayChange}
-            className={styles.nineTeen}
-          />
+          {allPins.map((pin, idx) =>
+            usedPins.includes(`${pin}`) ? (
+              <input
+                key={idx}
+                type="checkbox"
+                name={pin}
+                disabled
+                onChange={handleArrayChange}
+                className={`check${idx}`}
+              />
+            ) : (
+              <input
+                key={idx}
+                type="checkbox"
+                name={pin}
+                onChange={handleArrayChange}
+                className={`check${idx}`}
+              />
+            )
+          )}
         </div>
       </form>
       <button className={styles.customBtn} onClick={handleSubmit}>
