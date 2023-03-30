@@ -29,6 +29,13 @@ const FlowerBox = (props) => {
         <br />
         <strong>Pre-set Moisture:&emsp;</strong>
         <span>{props.data.set_moisture + " %" || "No Data"}</span>
+        <br />
+        <strong>Watering GPIO:&emsp;</strong>
+        <span>{props.data.watering_pin}</span>
+        <br />
+        <strong>Moisture GPIO:&emsp;</strong>
+        <span>{props.data.moisture_pin}</span>
+        <br />
       </div>
       <label className="form-label" htmlFor="watering">
         Watering Duration: {props.dur} [s]
