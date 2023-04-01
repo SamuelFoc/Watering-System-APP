@@ -48,7 +48,7 @@ const FlowerBox = (props) => {
         onChange={(e) => props.onDur(e.target.value)}
         value={props.dur}
         min={0}
-        max={10}
+        max={20}
       />
       {props.load && (
         <div className="spinner-grow text-primary my-3" role="status">
